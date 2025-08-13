@@ -1,5 +1,7 @@
 import 'package:column_and_row/card_sample.dart';
+import 'package:column_and_row/column_screen.dart';
 import 'package:column_and_row/container_sample.dart';
+import 'package:column_and_row/row_screen.dart';
 import 'package:flutter/material.dart';
 
 class Homescreen extends StatelessWidget {
@@ -21,45 +23,42 @@ class Homescreen extends StatelessWidget {
 
           children: [
             SizedBox(height: 20),
-            TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(19),
-                  side: const BorderSide(color: Colors.blue, width: 2),
-                ),
-                padding: const EdgeInsets.all(15), // Adjust size
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ContainerSample()),
-                );
-              },
-              child: Text("Container", style: TextStyle(fontSize: 30)),
+            blueButton(
+              context,
+              buttontitle: "Container",
+              screen: ContainerSample(),
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(19),
-                  side: const BorderSide(color: Colors.blue, width: 2),
-                ),
-                padding: const EdgeInsets.all(15), // Adjust size
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CardSample()),
-                );
-              },
-              child: Text("Card", style: TextStyle(fontSize: 30)),
-            ),
+            blueButton(context, buttontitle: "Cards", screen: CardSample()),
+            blueButton(context, buttontitle: "Row", screen: RowScreen()),
+            blueButton(context, buttontitle: "column", screen: ColumnScreen()),
           ],
         ),
       ),
+    );
+  }
+
+  TextButton blueButton(
+    BuildContext context, {
+    required String buttontitle,
+    required Widget screen,
+  }) {
+    return TextButton(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(19),
+          side: const BorderSide(color: Colors.blue, width: 2),
+        ),
+        padding: const EdgeInsets.all(15), // Adjust size
+      ),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => screen),
+        );
+      },
+      child: Text(buttontitle, style: TextStyle(fontSize: 30)),
     );
   }
 }
