@@ -15,40 +15,27 @@ class RowScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
 
             children: [
-              Card(
-                color: Colors.red,
-                shadowColor: Colors.grey,
-                child: Text("Hello", style: TextStyle(fontSize: 30)),
-              ),
-              Card(
-                color: Colors.blue,
-                shadowColor: Colors.grey,
-                child: Text("How", style: TextStyle(fontSize: 30)),
-              ),
-              Card(
-                color: Colors.green,
-                shadowColor: Colors.grey,
-                child: Text("fast", style: TextStyle(fontSize: 30)),
-              ),
-              Card(
-                color: Colors.red,
-                shadowColor: Colors.grey,
-                child: Text("Nice", style: TextStyle(fontSize: 30)),
-              ),
-              Card(
-                color: Colors.blue,
-                shadowColor: Colors.grey,
-                child: Text("Good", style: TextStyle(fontSize: 30)),
-              ),
-              Card(
-                color: Colors.green,
-                shadowColor: Colors.grey,
-                child: Text("Overflow", style: TextStyle(fontSize: 30)),
-              ),
+              _sampleCard(name: "first"),
+              _sampleCard(name: "second"),
+              _sampleCard(name: "Third", namecolor: Colors.red),
+              _sampleCard(name: "fourth"),
+              _sampleCard(name: "fifth"),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Card _sampleCard({
+    required String name,
+    Color namecolor = Colors.blue,
+    Color shdcolor = Colors.grey,
+  }) {
+    return Card(
+      color: namecolor,
+      shadowColor: shdcolor,
+      child: Text(name, style: TextStyle(fontSize: 30)),
     );
   }
 }

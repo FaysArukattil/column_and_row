@@ -1,7 +1,14 @@
+import 'package:column_and_row/gridviewscreen.dart';
+import 'package:column_and_row/images.dart';
 import 'package:column_and_row/card_sample.dart';
 import 'package:column_and_row/column_screen.dart';
 import 'package:column_and_row/container_sample.dart';
+import 'package:column_and_row/listviewscreen.dart';
+import 'package:column_and_row/pageviewsample.dart';
 import 'package:column_and_row/row_screen.dart';
+import 'package:column_and_row/sampleui2.dart';
+import 'package:column_and_row/stack_sample.dart';
+import 'package:column_and_row/ui_sample.dart';
 import 'package:flutter/material.dart';
 
 class Homescreen extends StatelessWidget {
@@ -18,20 +25,51 @@ class Homescreen extends StatelessWidget {
         title: Text("Row & Column"),
       ),
       body: Center(
-        child: Column(
-          spacing: 20,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              spacing: 20,
 
-          children: [
-            SizedBox(height: 20),
-            blueButton(
-              context,
-              buttontitle: "Container",
-              screen: ContainerSample(),
+              children: [
+                blueButton(
+                  context,
+                  buttontitle: "Container",
+                  screen: ContainerSample(),
+                ),
+                blueButton(context, buttontitle: "Cards", screen: CardSample()),
+                blueButton(context, buttontitle: "Row", screen: RowScreen()),
+                blueButton(
+                  context,
+                  buttontitle: "column",
+                  screen: ColumnScreen(),
+                ),
+                blueButton(context, buttontitle: "UI", screen: UiSample()),
+                blueButton(
+                  context,
+                  buttontitle: "Stack",
+                  screen: StackSample(),
+                ),
+                blueButton(context, buttontitle: "Ui2", screen: Sampleui2()),
+                blueButton(context, buttontitle: "Images", screen: Images()),
+                blueButton(
+                  context,
+                  buttontitle: "List View ",
+                  screen: Listviewscreen(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Grid View",
+                  screen: Gridviewscreen(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Page View",
+                  screen: Pageviewsample(),
+                ),
+              ],
             ),
-            blueButton(context, buttontitle: "Cards", screen: CardSample()),
-            blueButton(context, buttontitle: "Row", screen: RowScreen()),
-            blueButton(context, buttontitle: "column", screen: ColumnScreen()),
-          ],
+          ),
         ),
       ),
     );
@@ -50,7 +88,8 @@ class Homescreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(19),
           side: const BorderSide(color: Colors.blue, width: 2),
         ),
-        padding: const EdgeInsets.all(15), // Adjust size
+        padding: const EdgeInsets.all(15), // Adjust sizec
+        minimumSize: const Size(250, 60),
       ),
       onPressed: () {
         Navigator.push(

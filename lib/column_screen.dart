@@ -12,6 +12,14 @@ class ColumnScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              ListTile(
+                leading: Icon(Icons.apple_sharp),
+                title: Text("Hello"),
+                subtitle: Text("How are You"),
+                trailing: Icon(
+                  Icons.signal_wifi_statusbar_connected_no_internet_4_sharp,
+                ),
+              ),
               Card(
                 color: Colors.red,
                 shadowColor: Colors.grey,
@@ -61,6 +69,14 @@ class ColumnScreen extends StatelessWidget {
                 color: Colors.green,
                 shadowColor: Colors.grey,
                 child: Text("Nice", style: TextStyle(fontSize: 30)),
+              ),
+              ListTile(
+                leading: Icon(Icons.apple_sharp),
+                title: Text("Hello"),
+                subtitle: Text("How are You"),
+                trailing: Icon(
+                  Icons.signal_wifi_statusbar_connected_no_internet_4_sharp,
+                ),
               ),
             ],
           ),
