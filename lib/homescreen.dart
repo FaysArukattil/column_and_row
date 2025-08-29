@@ -1,13 +1,26 @@
+import 'package:column_and_row/alertsamplescreen.dart';
+import 'package:column_and_row/bottom_navbar_screen.dart';
+import 'package:column_and_row/button_sample.dart';
+import 'package:column_and_row/color_screen.dart';
+import 'package:column_and_row/coumter_screen.dart';
+import 'package:column_and_row/dice.dart';
+import 'package:column_and_row/expanded_and_flexible.dart';
+import 'package:column_and_row/gridview_inside_sample.dart';
 import 'package:column_and_row/gridviewscreen.dart';
 import 'package:column_and_row/images.dart';
 import 'package:column_and_row/card_sample.dart';
 import 'package:column_and_row/column_screen.dart';
 import 'package:column_and_row/container_sample.dart';
 import 'package:column_and_row/listviewscreen.dart';
+import 'package:column_and_row/mediaquery_sample.dart';
+import 'package:column_and_row/navigation_sample.dart';
 import 'package:column_and_row/pageviewsample.dart';
+import 'package:column_and_row/reels.dart';
 import 'package:column_and_row/row_screen.dart';
 import 'package:column_and_row/sampleui2.dart';
 import 'package:column_and_row/stack_sample.dart';
+import 'package:column_and_row/statefulbutton.dart';
+import 'package:column_and_row/tapbar_sample.dart';
 import 'package:column_and_row/ui_sample.dart';
 import 'package:flutter/material.dart';
 
@@ -67,6 +80,63 @@ class Homescreen extends StatelessWidget {
                   buttontitle: "Page View",
                   screen: Pageviewsample(),
                 ),
+                blueButton(context, buttontitle: "Reels", screen: Reels()),
+                blueButton(
+                  context,
+                  buttontitle: "Expanded\n    \t\t\t&\nFlexible",
+                  screen: ExpandedAndFlexible(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Button",
+                  screen: ButtonSample(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Grid View \ninside Column",
+                  screen: GridviewInsideSample(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Navigation",
+                  screen: NavigationSample(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Statefull Widget",
+                  screen: CounterScreen(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "ColorScreen",
+                  screen: ColorScreen(),
+                ),
+                blueButton(context, buttontitle: "Dice", screen: Dice()),
+                blueButton(
+                  context,
+                  buttontitle: "StatefulButton",
+                  screen: Statefulbutton(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "TapBar",
+                  screen: TapbarSample(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "MediaQuery Sample",
+                  screen: MediaquerySample(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Bottom NavBar",
+                  screen: BottomNavbarScreen(),
+                ),
+                blueButton(
+                  context,
+                  buttontitle: "Alert",
+                  screen: Alertsamplescreen(),
+                ),
               ],
             ),
           ),
@@ -88,7 +158,7 @@ class Homescreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(19),
           side: const BorderSide(color: Colors.blue, width: 2),
         ),
-        padding: const EdgeInsets.all(15), // Adjust sizec
+        padding: const EdgeInsets.all(15), // Adjust size
         minimumSize: const Size(250, 60),
       ),
       onPressed: () {
